@@ -21,7 +21,11 @@
 
 ## Нотатка PM — порівняння реалізацій (трек D)
 
-Порівнювала 3 реалізації за їхніми `docs/conformance.md` і `docs/spec-reading.md`: HryhoriiHaponiukQuitCode (знімок 19.10), maryan-qc (знімок 21.10), markkern-hyra (знімок 21.10). Від двох розробників реалізацій на 21.10 не отримано — додам, коли надішлють.
+Порівнювала 3 реалізації за їхніми `docs/conformance.md` і `docs/spec-reading.md`. Від двох розробників реалізацій на 21.10 не отримано — додам, коли надішлють.
+
+- HryhoriiHaponiukQuitCode (знімок 19.10): https://github.com/HryhoriiHaponiukQuitCode/therapy-scheduling/blob/main/docs/conformance.md, https://github.com/HryhoriiHaponiukQuitCode/therapy-scheduling/blob/main/docs/spec-reading.md
+- maryan-qc (знімок 21.10): https://github.com/maryan-qc/therapy-scheduling/blob/main/docs/conformance.md, https://github.com/maryan-qc/therapy-scheduling/blob/main/docs/spec-reading.md
+- markkern-hyra (знімок 21.10): https://github.com/markkern-hyra/therapy-scheduling/blob/main/docs/conformance.md, https://github.com/markkern-hyra/therapy-scheduling/blob/main/docs/spec-reading.md
 
 1. AC / вимога: AC-HOLD-09 — розклад терапевта. Як прочитали чи реалізували: HryhoriiHaponiukQuitCode — утримання й сеанси на 7 днів від сьогодні (власне припущення); maryan-qc — тиждень понеділок–неділя з усіма слотами й статусами, з перемиканням тижнів. Чому: у вимозі не було ні періоду, ні вмісту розкладу; ознаку успіху «на тиждень» прочитали по-різному, а глосарій («Розклад» — лише утримання й сеанси) суперечив AC-HOLD-21 («слот показано як вільний»). Що зробив PM: відповіла в #9 (тиждень пн–нд + усі слоти зі статусами), додала AC-HOLD-30, 31, а уточнення «Розклад» у глосарії, обіцяне в #9, не збереглося — розробник помітив розбіжність між відповіддю й знімком; виправлю в оновленні для WS7. Висновок: період і вміст екрана треба задавати критерієм, а не лише ознакою успіху.
 2. AC / вимога: AC-HOLD-20 — список утримань планувальника. Як прочитали чи реалізували: maryan-qc показує «Held», «Confirmed» і «Expired» (висновок із матриці прав); HryhoriiHaponiukQuitCode — окремо лише прострочені утримання; pavmys спитав окремо (#15). Чому: критерії описували тільки прострочені утримання, а що ще в списку і в якому порядку — ні. Що зробив PM: відповіла в #15 — лише «Held» і «Expired», за часом слоту від найближчого; зміна у вимозі — у наступному оновленні (WS7).
